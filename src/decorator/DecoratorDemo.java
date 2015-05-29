@@ -1,5 +1,6 @@
 /**
- * 
+ * This file demos the in-lecture example of the Decorator Design Pattern.
+ * ref: http://chenjumin.iteye.com/blog/582951
  */
 package decorator;
 
