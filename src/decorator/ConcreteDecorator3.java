@@ -7,9 +7,9 @@ package decorator;
  * @author Jason
  *
  */
-public class ConcreterDecorator3 extends Decorator {
+public class ConcreteDecorator3 extends Decorator {
 
-	public ConcreterDecorator3(BaseComponentInterface bci) {
+	public ConcreteDecorator3(BaseComponentInterface bci) {
 		super(bci);
 	}
 
