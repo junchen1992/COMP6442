@@ -30,6 +30,11 @@ public class DecoratorDemo {
 		cd3 = new ConcreteDecorator3(new ConcreteDecorator1(
 				new ConcreteDecorator2(new BaseComponent1())));
 		cd3.show();
+		
+		// the elite of the decorator design pattern shows here:
+		Decorator decorator = new ConcreteDecorator2(new ConcreteDecorator1(
+				new ConcreteDecorator3(new BaseComponent1())));
+		decorator.show();
 	}
 
 }
