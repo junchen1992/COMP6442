@@ -1,6 +1,6 @@
 package decorator;
 
-public class Name {
+public class Name implements NameInterface {
 
 	String name;
 
@@ -12,8 +12,9 @@ public class Name {
 		this.name = name;
 	}
 
-	String showname() {
-		return name;
+	@Override
+	public String showname() {
+		return this.name;
 	}
 
 }

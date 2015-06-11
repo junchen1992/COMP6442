@@ -4,32 +4,20 @@ package decorator;
  * @author Jason
  *
  */
-public class FullName extends Name {
+public class FullName extends NameDecorator {
+	
 	String surname;
 	
-	Name name;
-
-	/*public FullName(String firstname, String surname) {
-		this.name = firstname;
-		this.surname = surname;
-	}*/
-	
-	// decorator design pattern:
-	public FullName(String surname, Name name) {
-		this.surname = surname;
-		this.name = name;
+	public FullName(NameInterface nif) {
+		super(nif);
 	}
-
-	/*String showname() {
-		return super.showname() + " " + surname;
-	}*/
 	
-	String showname() {
-		return name.showname() + " " + surname;
+	public FullName(NameInterface nif, String surname) {
+		super(nif);
+		this.surname = surname;
 	}
-
-	public static void main(String[] args) { 
-		Name name = new FullName("Chen", new Name("Jun"));
-		System.out.println(name.showname());
+	
+	public String showname() {
+		return this.surname + " " + super.showname();
 	}
 }
