@@ -24,6 +24,7 @@ public class BinaryTreeDemo {
 		bt = bt.remove(13);
 		System.out.println(bt.treeshow());
 		
+		bt.inorder((NonEmptyBinaryTree) bt);
 		
 	}
 

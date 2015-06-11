@@ -1,5 +1,7 @@
 package tree;
 
+import java.util.ArrayList;
+
 /**
  * NonEmptyBinaryTree - this is a binary search tree that is either an inner node
  * of the tree or a leaf node.  Leaf nodes will have 2 empty nodes attached to 
@@ -16,6 +18,8 @@ public class NonEmptyBinaryTree extends BinaryTree {
 	int data;
 	BinaryTree left, right;
 	
+	ArrayList<Integer> inorderdata = new ArrayList<Integer>();
+	
 	public NonEmptyBinaryTree(int data) {
 		this.data = data;
 		left = new EmptyBinaryTree();
@@ -26,6 +30,26 @@ public class NonEmptyBinaryTree extends BinaryTree {
 		this.data = data;
 		this.left = left;
 		this.right = right;
+	}
+	
+	public void inorder(NonEmptyBinaryTree nbt) {
+		if(!nbt.left.isEmpty()) {
+			inorder((NonEmptyBinaryTree)nbt.left);
+		}
+		//System.out.println(nbt.data);
+		inorderdata.add(nbt.data);
+		if(!nbt.right.isEmpty()) {
+			inorder((NonEmptyBinaryTree)nbt.right);
+		}
+	}
+	
+	@Override
+	public boolean isBST() {
+		for(int i = 1; i < this.inorderdata.size(); i++) {
+			if(this.inorderdata.get(i) < this.inorderdata.get(i-1)) 
+				return false;
+		}
+		return true;
 	}
 	
 	public BinaryTree insert(int d) {
@@ -138,6 +162,9 @@ public class NonEmptyBinaryTree extends BinaryTree {
 	public boolean avlBalanced() {
 		return -1 <= balanceFactor() && balanceFactor() <= 1 && left.avlBalanced() && right.avlBalanced();
 	}
+
+	
+
 	
 	
 	

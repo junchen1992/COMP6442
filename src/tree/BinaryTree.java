@@ -28,4 +28,8 @@ public abstract class BinaryTree {
 	
 	public abstract int balanceFactor();
 	public abstract boolean avlBalanced();
+	
+	public abstract boolean isBST();
+	
+	public abstract void inorder(NonEmptyBinaryTree nbt);
 }

@@ -69,4 +69,14 @@ public class EmptyBinaryTree extends BinaryTree {
 	public boolean avlBalanced() {
 		return true;
 	}
+	
+	public boolean isBST() {
+		return true;
+	}
+
+	@Override
+	public void inorder(NonEmptyBinaryTree nbt) {
+		// TODO Auto-generated method stub
+		
+	}
 }
